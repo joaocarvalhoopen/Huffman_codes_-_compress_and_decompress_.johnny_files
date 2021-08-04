@@ -95,7 +95,7 @@ use std::ffi::OsStr;
 // use priority_queue::PriorityQueue;      // for Huffman code algorithm.
 // use priority_queue_rs::PriorityQueue;   // for Huffman code algorithm.
 
-/// Usage: "password_gen length"
+/// Usage: "huffman_codes [compress|decompress] filename"
 static USAGE: &str = "   Usage: \"huffman_codes [compress|decompress] filename";
 
 fn main() {
@@ -136,7 +136,7 @@ impl Config {
         }
         // casting your String into an &str (a string slice)
         let action = match &( args[1].to_ascii_uppercase() )[..] {
-            "COMPRESS" => Action::Compress,
+            "COMPRESS"   => Action::Compress,
             "DECOMPRESS" => Action::Decompress,  
             _ => {    
                 println!(" Invalid compress or decompress action ex: huffman_codes compress  ...");
@@ -539,7 +539,6 @@ impl MappingTable {
 
         println!("\n map_decoding: \n{:?}\n\n", vec_tmp);
 
-
         // Fill in the header with the position of one plus the end of
         // the header or the position of the start of the compressed data.
         let len = buffer_out.len();
@@ -557,7 +556,6 @@ impl MappingTable {
         let start_2_header = buffer_out.len();
 
         println!("\n...start index of data {} ", start_2_header);
-
 
         // Fill in the second header, for the 64 bit, 8 bytes number of symbols,
         // with zeros.
@@ -708,10 +706,6 @@ impl MappingTable {
         }
 
         println!("\n...symbol_counter or original file byte size {} ", symbol_counter);
-
-
-        
-
 
         // We obtain the data sub_range slice to iterate over it.
         let sub_range_buffer_in = &buffer_in[header_2_start + 8 ..];
