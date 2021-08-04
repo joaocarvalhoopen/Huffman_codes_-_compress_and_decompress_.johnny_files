@@ -1,0 +1,19 @@
+[package]
+name = "huffman_codes"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Slightly slower (1 s in 23 s) on compresion slightly faster on decompression (2 s in 51 s).
+# Not so portable.
+# 
+# [target.release]
+# rustflags = ["+avx2", "+fma"]  # custom flags for `rustc`
+#
+# [target.release]
+# rustflags = ["+ssse3"]  # custom flags for `rustc`
+
+[dependencies]
+hashbrown = "0.3"
+
