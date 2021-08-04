@@ -75,10 +75,10 @@ The executable will be in ```huffman_codes/target/release/huffman_codes```
 
 ## References
 
-* Huffman Codes: An Information Theory Perspective <br>
+* **Huffman Codes**: An Information Theory Perspective <br>
   [https://www.youtube.com/watch?v=B3y0RsVCyrw](https://www.youtube.com/watch?v=B3y0RsVCyrw)
 
-* hashbrown - Fast drop in replacement for STD HashMap, a Rust port of Google's high-performance SwissTable hash map. <br>
+* **hashbrown** - Fast drop in replacement for STD HashMap, a Rust port of Google's high-performance SwissTable hash map. <br>
   [https://github.com/Amanieu/hashbrown](https://github.com/Amanieu/hashbrown)
 
 
