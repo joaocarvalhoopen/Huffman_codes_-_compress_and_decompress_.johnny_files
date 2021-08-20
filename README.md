@@ -40,6 +40,11 @@ The executable will be in ```huffman_codes/target/release/huffman_codes```
   **compress:**    **3.4 MB** -> **2.4 MB** executable in to **.johnny** in **0.211 s** <br>
   **decompress:**  2.4 MB -> 3.4 MB .johnny in to executable in **0.521 s**
 
+* [ in **SSD**, **fast HashBrown HashMap and string as bytes**] <br>
+  **compress:**    **3.4 MB** -> **2.4 MB** executable in to **.johnny** in **0.061 s** <br>
+  **decompress:**  2.4 MB -> 3.4 MB .johnny in to executable in **0.218 s** <br>
+  NOTE: **This is the current code version.**
+
 * [ in **RAM /dev/shm/**, **std HashMap** ] <br>
   **compress:**    **600 MB** -> 600MB + 2570 Bytes mp4 video in to .johnny in **33.825 s** <br>
   **decompress:**  600MB + 2570 Bytes -> 600 MB .johnny in to mp4 video in **1m 44.326 s** 
@@ -47,7 +52,11 @@ The executable will be in ```huffman_codes/target/release/huffman_codes```
 * [ in **RAM /dev/shm/**, **fast HashBrown HashMap** ] <br>
   **compress:**    **600 MB** -> 600MB + 2570 Bytes mp4 video in to .johnny in **23.863 s** <br>
   **decompress:**  600MB + 2570 Bytes -> 600 MB .johnny in to mp4 video in **51.689 s** <br>
-  Note: This is the current code version.
+
+* [ in **RAM /dev/shm/**, **fast HashBrown HashMap and string as bytes** ] <br>
+  **compress:**    **600 MB** -> 600MB + 2570 Bytes mp4 video in to .johnny in **8.574 s** <br>
+  **decompress:**  600MB + 2570 Bytes -> 600 MB .johnny in to mp4 video in **51.689 s** <br>
+  Note: **This is the current code version.**
 
 
 ## Algorithm

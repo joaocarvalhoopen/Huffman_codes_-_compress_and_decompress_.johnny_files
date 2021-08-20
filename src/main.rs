@@ -66,6 +66,11 @@
 *   compress    3.4 MB -> 2.4 MB executable in to .johnny in 0.211 s          *
 *   decompress  2.4 MB -> 3.4 MB .johnny in to executable in 0.521 s          *
 *                                                                             *
+*   [ in SSD, fast HashBrown HashMap and string as bytes ]                    *
+*   compress    3.4 MB -> 2.4 MB executable in to .johnny in 0.061 s          *
+*   decompress  2.4 MB -> 3.4 MB .johnny in to executable in 0.218 s          *
+*   NOTE: Current version!                                                    *
+*                                                                             *
 *   [ in RAM /dev/shm/, std HashMap ]                                         *
 *   compress    600 MB -> 600MB + 2570 Bytes mp4 in to .johnny in 33.825 s    *
 *   decompress  600MB + 2570 Bytes -> 600 MB .johnny in to mp4 in 1m 44.326 s *
@@ -74,6 +79,10 @@
 *   compress    600 MB -> 600MB + 2570 Bytes mp4 in to .johnny in 23.863 s    *
 *   decompress  600MB + 2570 Bytes -> 600 MB .johnny in to mp4 in 51.689 s    *
 *                                                                             *
+*   [ in RAM /dev/shm/, fast HashBrown HashMap and string as bytes ]          *
+*   compress    600 MB -> 600MB + 2570 Bytes mp4 in to .johnny in 8.574 s     *
+*   decompress  600MB + 2570 Bytes -> 600 MB .johnny in to mp4 in 51.689 s    *
+*   NOTE: Current version!                                                    *
 *                                                                             *
 ******************************************************************************/
 
@@ -582,9 +591,11 @@ impl MappingTable {
         
             // Convert the encoding string into the next bit's in the buffer_out.
             // At the end of each bytes writes to the buffer_out
-            for c in string_enc.chars(){
+            // for c in string_enc.chars(){    // UTF-8 way
+            for c in string_enc.bytes(){        // Binary way.
                 // print!("{}", c);
-                if c == '1' {
+                // if c == '1'  {              // UTF-8 way
+                if c == b'1'  {                     // Binary way.
                     byte_out |= 0b1000_0000 >> index_out_bit;
                 }
                 index_out_bit += 1;
