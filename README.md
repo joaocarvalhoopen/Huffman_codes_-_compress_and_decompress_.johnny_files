@@ -43,7 +43,7 @@ The executable will be in ```huffman_codes/target/release/huffman_codes```
 * [ in **SSD**, **fast HashBrown HashMap and string as bytes**] <br>
   **compress:**    **3.4 MB** -> **2.4 MB** executable in to **.johnny** in **0.061 s** <br>
   **decompress:**  2.4 MB -> 3.4 MB .johnny in to executable in **0.218 s** <br>
-  NOTE: **This is the current code version.**
+  Note: **This is the current code version.**
 
 * [ in **RAM /dev/shm/**, **std HashMap** ] <br>
   **compress:**    **600 MB** -> 600MB + 2570 Bytes mp4 video in to .johnny in **33.825 s** <br>
